@@ -1,0 +1,48 @@
+.TabsHead{
+    .ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+        height: 70px;
+        padding: 1px 25px;
+    }
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+        color: #000000;
+        font-weight: bold;
+    }
+    .ant-tabs-tab {
+        font-family: Helvetica;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        color: #757575;
+        margin: 0 60px 0 0;
+    }
+
+    .ant-tabs-tab-active{
+        border-bottom: 2px solid #40a9ff;
+    }
+    .rigth {
+        position: absolute;
+        top: 10px;
+        right: 45px;
+        display: flex;
+        height: 60px;
+        &_contIcon{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 180px;
+            margin-right: 20px;
+            svg {
+                font-size: 21px;
+                font-weight: 700;
+                color: #4B4B4B;
+            }
+        }
+        &_img {
+            width: 83px;
+            height: 93px;
+        }
+    }
+}
