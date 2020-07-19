@@ -9,8 +9,6 @@ export const Home = () => {
 	return (
 		<div className="Home">
 			<TabsHead/>
-
-
 		</div>
 	);
 }

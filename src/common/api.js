@@ -10,7 +10,7 @@ export class Api {
     let dataBody
 
     if (formData) {
-      dataBody = new FormData();
+      dataBody = new FormData();  
       Object.keys(data).map(key => {
         if (!Array.isArray(data[key]))
           dataBody.append(key, data[key]);

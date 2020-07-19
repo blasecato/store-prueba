@@ -1,5 +1,12 @@
 .Lifestyle{
 
+    display: flex;
+    justify-content: center;
+
+    &_cont {
+        width: 90%;
+    }
+
     &_href {
         color: #000000;
         text-align: left;
@@ -27,6 +34,7 @@
                 align-items: center;
                 display: flex;
                 font-style: normal;
+                font-family: Roboto;
                 font-weight: 500;
                 font-size: 12px;
                 line-height: 14px;
@@ -37,6 +45,7 @@
                 margin-left: 50px;
 
                 &--order{
+                    font-family: Roboto;
                     margin-right: 5px;
                     font-style: normal;
                     font-weight: normal;
@@ -44,6 +53,9 @@
                     line-height: 14px;
 
                     color: #000000;
+                }
+                .ant-select {
+                    width: 150px;
                 }
                 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
                     background-color: transparent;
@@ -54,15 +66,18 @@
         }
         &__store{
             display: flex;
-            /* justify-content: center; */
+            justify-content: space-around;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            margin-top: 40px;
 
             &--item {
+                margin: 10px;
                 .img {
-                    width: 250px;
-                    height: 250px;
-                    object-fit: cover;
+                    width: 279px;
+                    height: 236px;
+                    margin-bottom: 15px;
+                    object-fit: contain;
                 }
                 .data-article{
                     display: flex;
@@ -71,7 +86,11 @@
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
+                        span{
+                            margin-bottom: 3px;
+                        }
                         .name {
+                            font-family: Roboto;
                             font-style: normal;
                             font-weight: bold;
                             font-size: 14px;
@@ -86,6 +105,7 @@
                             color: #929292;
                         }
                         .price1{
+                            font-family: Roboto;
                             font-style: normal;
                             font-weight: 500;
                             font-size: 10px;
@@ -96,6 +116,7 @@
                             color: #939393;
                         }
                         .price2{
+                            font-family: Roboto;
                             font-style: normal;
                             font-weight: 500;
                             font-size: 14px;
@@ -105,13 +126,13 @@
                     }
                     &--btn {
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-end;
                         align-items: center;
-                        padding: 0 25px;
                         .btn-store{
                             color: #ffffff;
                             background-color: #1C69D4;
                             border-radius: 0;
+                            font-family: Roboto;
                             font-size: 19px;
                             height: 51px;
                             width: 51px;
