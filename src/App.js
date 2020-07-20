@@ -19,8 +19,6 @@ const App = () =>{
         <Switch className="h-100">
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
-          <Route exact path="/record" component={Record} />
-          <Route exact path="/" component={Home} />
           {arrayPrpducts && arrayPrpducts.length > 0 ?
             <Route path="/car" component={Car} />
             :
