@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button, InputNumber } from 'antd';
+import { useDispatch, useSelector } from "react-redux"
+import { Modal, Button, InputNumber, Form } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import Item from 'antd/lib/list/Item';
+import { productcart as productCartAction } from "../../services/car/ProductCarAction";
 
 export const ModalDetailProduct = ({ product }) => {
 
-	const [visible, isVisible] = useState(false);
+	const { arrayPrpducts } = useSelector(state => state.car);
+	const dispatch = useDispatch()
+	const [visible, setVisible] = useState(false);
 
 	const showModal = () => {
-		isVisible(true)
+		setVisible(true)
 	};
-
 	const handleOk = () => {
-		isVisible(false)
+		setVisible(false)
 	};
 
-	const handleCancel = () => {
-		isVisible(false)
+	const onFinish = cant => {
+		var value = {cant , product}
+		let newArray = [...arrayPrpducts,value]
+		setVisible(false)
+		dispatch(productCartAction.addCar(newArray))
 	};
 
-	const onChange = (value) => {
-		console.log('changed', value);
-	}
+	const onFinishFailed = errorInfo => {
+	};
+
 
 	return (
 		<div className="ModalDetailProduct">
@@ -33,7 +38,7 @@ export const ModalDetailProduct = ({ product }) => {
 				className="modal"
 				visible={visible}
 				onOk={() => handleOk()}
-				onCancel={() => handleCancel()}
+				onCancel={() => handleOk()}
 			>
 				<h1 className="ModalDetailProduct__title">Agregar al carrito.</h1>
 				{product &&
@@ -54,20 +59,32 @@ export const ModalDetailProduct = ({ product }) => {
 						</div>
 					</div>
 				}
-				<div className="ModalDetailProduct__cont-btn">
-					<span className="cant">
-						Cantidad:
-					</span>
-					<InputNumber min={1} max={10} defaultValue={1} onChange={onChange} />
-				</div>
-				<div className="ModalDetailProduct__cont-btn">
-					<Button className="cancel">
-						Cancelar
-					</Button>
-					<Button className="acept">
-						Agregar
-					</Button>
-				</div>
+				<Form
+					name="basic"
+					initialValues={{ remember: true }}
+					onFinish={onFinish}
+					onFinishFailed={onFinishFailed}
+				>
+					<div className="ModalDetailProduct__cont-btn">
+						<span className="cant">
+							Cantidad:
+						</span>
+						<Form.Item
+							name="cant"
+							rules={[{ required: true, message: 'Campo Obligatorio' }]}
+						>
+							<InputNumber min={1} max={10} />
+						</Form.Item>
+					</div>
+					<div className="ModalDetailProduct__cont-btn">
+						<Button onClick={()=>handleOk()} className="cancel">
+							Cancelar
+						</Button>
+						<Button type="primary" htmlType="submit" className="acept">
+							Agregar
+						</Button>
+					</div>
+				</Form>
 			</Modal>
 		</div>
 	);

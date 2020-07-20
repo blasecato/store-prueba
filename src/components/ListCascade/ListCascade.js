@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Icon, Input, Button, Spin, notification, Alert, Checkbox, Select, Slider, Switch } from 'antd';
-import { GithubPicker } from 'react-color';
+import { Button, Select, Slider, InputNumber, Form } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { product as productActions, product } from "../../services/product/productActions";
@@ -8,7 +7,7 @@ import { category as categoryActions, category } from "../../services/category/c
 
 const { Option } = Select;
 
-const ListCascade = () => {
+const ListCascade = ({ menor, mayor }) => {
 
 	const { products } = useSelector(state => state.product)
 	const { categorys, colors, prices } = useSelector(state => state.category)
@@ -20,6 +19,9 @@ const ListCascade = () => {
 	const [electronica, setElectronica] = useState(undefined)
 	const [colection, setColection] = useState(undefined)
 	const [cicle, setCicle] = useState(undefined)
+	const [color, setColor] = useState(undefined)
+	const [inputValueOne, setInputValueOne] = useState(0)
+	const [inputValueTwo, setInputValueTwo] = useState(0)
 
 	useEffect(() => {
 		dispatch(categoryActions.getCategory())
@@ -33,40 +35,57 @@ const ListCascade = () => {
 		setColection(categorys.find((item) => item.name === "coleccionables"))
 		setCicle(categorys.find((item) => item.name === "bisicleta"))
 	}, [categorys])
-	
+
+	useEffect(() => {
+		setInputValueOne(menor)
+		setInputValueTwo(mayor)
+	}, [menor,mayor])
+
 	const handleChangeCategory = (value) => {
 		setCategory(value)
 		var category = value
-		const values = {category , subCategory}
+		const values = { category, subCategory }
 		dispatch(productActions.getSubcategory(values))
 	}
 
-	const handleChange = (value) => {
-		console.log(`selected ${value}`);
-	}
+	const handleChange = (value) => { }
 
 	const handleChangeFashion = (value) => {
 		var subCategory = value;
-		var values = { subCategory , category }
+		var values = { subCategory, category }
 		setSubCategory(value)
 		dispatch(productActions.getSubcategory(values))
 	}
 
 	const handleChangeColor = (value) => {
+		setColor(value);
+
 		var values = { value, category, subCategory }
 		dispatch(productActions.getColor(values))
 	}
 
 	const handleButtonCategoryColection = (colection) => {
 		const value = colection.name
+		setSubCategory(undefined)
 		setCategory(value)
 		dispatch(productActions.get(value))
 	}
 
 	const handleButtonCategoryCicle = (cicle) => {
 		const value = cicle.name
+		setSubCategory(undefined)
 		setCategory(value)
 		dispatch(productActions.get(value))
+	}
+
+
+	const onAfterChange = value => {
+		setInputValueOne(value[0])
+		setInputValueTwo(value[1])
+		var min = value[0]
+		var max = value[1]
+		var values = {min,max}
+		dispatch(productActions.getRange(values))
 	}
 
 	return (
@@ -147,17 +166,50 @@ const ListCascade = () => {
 						))}
 					</Select>
 				</div>
-				<Slider range defaultValue={[20, 50]} disabled={disabled} />
+				{inputValueOne &&
+					<Slider
+						range
+						min={menor}
+						max={mayor}
+						onAfterChange={onAfterChange}
+						defaultValue={[inputValueOne, inputValueTwo]}
+					/>
+				}
 				<div className="price">
-					<div className="price--cont">
-						$100,000
-          </div>
-					<div className="price--line">
-					</div>
-					<div className="price--cont">
-						$400,000
-          </div>
+					<InputNumber
+						disabled={true}
+						className="price--cont"
+						value={inputValueOne}
+						defaultValue={menor}
+					/>
+					<div className="price--line"></div>
+					<InputNumber
+						disabled={true}
+						className="price--cont"
+						value={inputValueTwo}
+						defaultValue={mayor}
+					/>
 				</div>
+
+				<div className="search">
+					Busqueda
+							{category &&
+						<div className="search-cat">
+							Categoria: {category}
+						</div>
+					}
+					{subCategory &&
+						<div className="search-cat">
+							Categoria: {subCategory}
+						</div>
+					}
+					{color &&
+						<div className="search-cat">
+							Categoria: {color}
+						</div>
+					}
+				</div>
+
 			</div>
 		</div>
 	);

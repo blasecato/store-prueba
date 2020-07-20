@@ -12,18 +12,44 @@ function* createProduct({ payload }) {
   }
 }
 
-// function* createDiagnostico({ payload }) {
-//   const response = yield Api.post('/crops/create/diagnostic', payload.organization)
-//   if (response.ok) {
-//     yield put(organization.createDiagnosticoResponse());
-//   } else {
-//     const err = new TypeError('ERROR_CREATE_DIAGNOSTICO')
-//     yield put(organization.createDiagnosticoResponse(err))
-//   }
-// }
 
-function* getProduct() {
-  const response = yield Api.get('/products')
+
+function* getPrices({ payload }) {
+  console.log(payload)
+  if(payload.id.value){
+    const response = yield Api.get(`/products?_sort=priceBefore&_order=${payload.id.value}&_page=${payload.id.pageCounter}&_limit=6`)
+    if (response.ok) {
+      yield put(product.getPricesResponse(response.payload));
+    } else {
+      const err = new TypeError('ERROR_GET_PRODUCTS')
+      yield put(product.getPricesResponse(err))
+    }
+  }else {
+    const response = yield Api.get(`/products?_page=${payload.id}&_limit=6`)
+    if (response.ok) {
+      yield put(product.getProductResponse(response.payload));
+    } else {
+      const err = new TypeError('ERROR_GET_PRODUCTS')
+      yield put(product.getProductResponse(err))
+    }
+  }
+}
+
+
+function* getRange({ payload }) {
+  console.log(payload)
+    const response = yield Api.get(`/products?priceBefore_gte=${payload.id.min}&priceBefore_lte=${payload.id.max}&_page=1&_limit=6`)
+    if (response.ok) {
+      yield put(product.getRangeResponse(response.payload));
+    } else {
+      const err = new TypeError('ERROR_GET_PRODUCTS')
+      yield put(product.getRangeResponse(err))
+    }
+  
+}
+
+function* getProduct({ payload }) {
+  const response = yield Api.get(`/products?_page=${payload.id}&_limit=6`)
   if (response.ok) {
     yield put(product.getProductResponse(response.payload));
   } else {
@@ -32,15 +58,21 @@ function* getProduct() {
   }
 }
 
-// function* getDiagnostico() {
-//   const response = yield Api.get('/crops/get/crops-diagnostic')
-//   if (response.ok) {
-//     yield put(organization.getDiagnosticoResponse(response.payload));
-//   } else {
-//     const err = new TypeError('ERROR_CREATE_DIAGNOSTICO')
-//     yield put(organization.getDiagnosticoResponse(err))
-//   }
-// }
+
+
+
+function* getProducts() {
+  const response = yield Api.get(`/products`)
+  if (response.ok) {
+    yield put(product.getProductsResponse(response.payload));
+  } else {
+    const err = new TypeError('ERROR_GET_PRODUCTS')
+    yield put(product.getProductsResponse(err))
+  }
+}
+
+
+
 
 function* get({ payload }) {
   const response = yield Api.get(`/products?category=${payload.id}`)
@@ -86,7 +118,6 @@ function* getColor({ payload }) {
 
 
 function* getSubcategory({ payload }) {
-  console.log("hola",payload)
   if(payload.id.category && payload.id.subCategory){
     const  response = yield Api.get(`/products?subCategory=${payload.id.subCategory}&category=${payload.id.category}`)
     if (response.ok) {
@@ -117,20 +148,12 @@ function* getSubcategory({ payload }) {
  
 }
 
-// function* update({ payload }) {
-//   const response = yield Api.put(`/organization/update`, payload.organization)
-//   console.log(payload.organization)
-//   if (response.ok) {
-//     yield put(organization.updateResponse());
-//   } else {
-//     const err = new TypeError('ERROR_GET_PRODUCER')
-//     yield put(organization.getResponse(err))
-//   }
-// }
-
 function* ActionWatcher() {
   yield takeLatest(product.createProduct, createProduct)
   yield takeLatest(product.getProduct, getProduct)
+  yield takeLatest(product.getProducts, getProducts)
+  yield takeLatest(product.getPrices, getPrices)
+  yield takeLatest(product.getRange, getRange)
   yield takeLatest(product.get, get)
   yield takeLatest(product.getColor, getColor)
   yield takeLatest(product.getSubcategory, getSubcategory)

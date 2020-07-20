@@ -20,7 +20,6 @@ function* signup({ payload }) {
   const { data } = payload
   const response = yield Api.post('/auth/signup', data);
   if (response.ok) {
-    console.log(response)
     yield put(auth.signupResponse(response.ok));
   } else {
     const err = new TypeError('ERROR_LOGIN')

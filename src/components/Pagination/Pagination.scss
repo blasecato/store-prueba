@@ -1,0 +1,18 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    
+    .current {
+        color: #000000;
+        border: 1px solid #000000;
+        margin: 10px;
+        width: 150px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 16px;
+        font-family: Roboto;
+    }
+}

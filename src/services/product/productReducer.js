@@ -37,6 +37,36 @@ const reducer = handleActions({
       }
     },
 
+    GET_PRODUCTS: (state, { payload: { } }) => ({ ...state, loading: true }),
+    GET_PRODUCTS_RESPONSE: {
+      next(state, { payload: { listProducts } }) {
+        return { ...state, listProducts }
+      },
+      throw(state, action) {
+        return { ...state }
+      }
+    },
+
+    GET_PRICES: (state, { payload: { } }) => ({ ...state, loading: true }),
+    GET_PRICES_RESPONSE: {
+      next(state, { payload: { products } }) {
+        return { ...state, products }
+      },
+      throw(state, action) {
+        return { ...state }
+      }
+    },
+
+    GET_RANGE: (state, { payload: { } }) => ({ ...state, loading: true }),
+    GET_RANGE_RESPONSE: {
+      next(state, { payload: { products } }) {
+        return { ...state, products }
+      },
+      throw(state, action) {
+        return { ...state }
+      }
+    },
+
     GET_DIAGNOSTICO: (state, { payload: { } }) => ({ ...state, loading: true }),
     GET_DIAGNOSTICO_RESPONSE: {
       next(state, { payload: { products } }) {

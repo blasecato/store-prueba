@@ -1,0 +1,122 @@
+$s-medium: 570px;
+.Footer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    
+    .content {
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        color: #000000;
+        padding: 20px;
+        background-color: #F8F8F8;
+
+        &-title{
+            font-size: 16px;
+            line-height: 19px;
+        }
+        
+        p{
+            font-size: 12px;
+             line-height: 14px;
+            text-align: start;
+        }
+        .ant-input {
+            border-color: #000000;
+            border-right-width: 1px !important;
+            border-radius: 0;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        .ant-input:hover {
+            border-color: #000000;
+        }
+        .ant-checkbox {
+            border: 1px solid;
+            padding: 4px;
+        }
+        .ant-checkbox-checked .ant-checkbox-inner {
+            background-color: #000000;
+            border-color: #000000 !important;
+            border-radius: 0;
+        }
+        .ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+            border-color: transparent;
+        }
+        .ant-checkbox + span {
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 12px;
+            color: #000000;
+        }
+        button{
+            background: #1C69D4;
+            color: #ffffff;
+            height: 52px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        margin-bottom: 30px;
+    }
+    .net {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .int {
+            height: 42px;
+        }
+        .red {
+            margin: 0 12px;
+        }
+        margin-bottom: 30px;
+    }
+    .contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 10px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 30px;
+        min-height: 195px;
+        &-email {
+            margin: 22px 0;
+        }
+        .select {
+            min-height: 46px;
+            /* margin-top: 20px; */
+            border-top: 1px solid;
+            width: 100%;
+            text-align: left;
+            padding: 18px;
+        }
+        .sb{
+            border-bottom: 1px solid;
+        }
+    }
+    @media (max-width: $s-medium) {
+
+        flex-direction:  column;
+        width: 100%;
+        .content{
+            min-width: 300px;
+            max-width: unset;
+            height: 327px;
+            justify-content: center;
+        }
+           
+    }
+}
+

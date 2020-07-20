@@ -185,7 +185,7 @@
       "category":"fashion",
       "subCategory": "camisa",
       "priceAfter": "$ 120.000",
-      "priceBefore": 100.999,
+      "priceBefore": 100999,
       "image": "https://image.dhgate.com/0x0s/f2-albu-g10-M00-37-09-rBVaVlyktamAaMItAACo9Qhz5no083.jpg/nuevos-hombres-camisa-para-hombre-de-manga.jpg",
       "color": "red"
     },
@@ -195,7 +195,7 @@
       "category":"fashion",
       "subCategory": "camisa",
       "priceAfter": "$ 130.000",
-      "priceBefore": 110.999,
+      "priceBefore": 110999,
       "image": "https://www.dhresource.com/0x0/f2/albu/g8/M00/C0/9F/rBVaV1zT_PaAZ2ncAAhsJ-8HH8g659.jpg",
       "color": "red"
     },
@@ -205,7 +205,7 @@
       "category":"fashion",
       "subCategory": "camisa",
       "priceAfter": "$ 150.000",
-      "priceBefore": 120.999,
+      "priceBefore": 120999,
       "image": "https://i.linio.com/p/eea4ace0d0d7db4736021c1d5322afcf-product.jpg",
       "color": "blue"
     },
@@ -215,7 +215,7 @@
       "category":"fashion",
       "subCategory": "pantalon",
       "priceAfter": "$ 160.000",
-      "priceBefore": 130.999,
+      "priceBefore": 130999,
       "image": "https://ae01.alicdn.com/kf/Hd3e913b4547443f1a6e3d3c4a3f39c10H/Luckinyoyo-jean-mujer-mom-jeans-pantalones-vaqueros-de-estilo-boyfriend-para-mujer-con-cintura-alta-push.jpg",
       "color": "yellow"
     },
@@ -225,7 +225,7 @@
       "category":"fashion",
       "subCategory": "pantalon",
       "priceAfter": "$ 170.000",
-      "priceBefore": 140.999,
+      "priceBefore": 140999,
       "image": "https://www.dhresource.com/0x0/f2/albu/g8/M00/AE/23/rBVaVFyMsVmAa6ADAAMAJ9-W6q8315.jpg",
       "color": "white"
     },
@@ -235,7 +235,7 @@
       "category":"fashion",
       "subCategory": "pantalon",
       "priceAfter": "$ 180.000",
-      "priceBefore": 150.999,
+      "priceBefore": 150999,
       "image": "https://cdn.shopify.com/s/files/1/1781/3685/products/51_VOLCOM_A1931510_RNS_FRT_1024x1024.JPG?v=1571439603",
       "color" : "black"
     },{
@@ -244,7 +244,7 @@
       "category":"fashion",
       "subCategory": "zapatos",
       "priceAfter": "$ 200.000",
-      "priceBefore": 190.999,
+      "priceBefore": 190999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_450,h_450/global/304879/04/sv01/fnd/PNA/fmt/png/BMW-M-Motorsport-Drift-Cat-5-NM-Men's-Shoes",
       "color":"black"
     },{
@@ -253,7 +253,7 @@
       "category":"fashion",
       "subCategory": "zapatos",
       "priceAfter": "$ 220.000",
-      "priceBefore": 180.999,
+      "priceBefore": 180999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/304879/05/sv01/fnd/PNA/fmt/png/BMW-M-Motorsport-Drift-Cat-5-NM-Men's-Shoes",
       "color":"black"
       },{
@@ -262,7 +262,7 @@
       "category":"fashion",
       "subCategory": "zapatos",
       "priceAfter": "$ 230.000",
-      "priceBefore": 130.999,
+      "priceBefore": 130999,
       "image": "https://ae01.alicdn.com/kf/Hc8986505ac3a4fcfbdb4c3caf760d810v/Zapatillas-PUMA-BMW-MMS-R-CAT-negro-blanco-339933-01.jpg",
       "color":"blue"
     },{
@@ -271,7 +271,7 @@
       "category":"fashion",
       "subCategory": "gorra",
       "priceAfter": "$ 260.000",
-      "priceBefore": 90.999,
+      "priceBefore": 90999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/021769/02/fnd/PNA/fmt/png/BMW-Motorsport-Cap",
       "color":"white"
     },{
@@ -280,7 +280,7 @@
       "category":"fashion",
       "subCategory": "gorra",
       "priceAfter": "$ 290.000",
-      "priceBefore": 135.999,
+      "priceBefore": 135999,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/021934/02/fnd/EEA/fmt/png/gorra-BMW-Motorsport",
       "color":"red"
     },{
@@ -289,7 +289,7 @@
       "category":"fashion",
       "subCategory": "gorra",
       "priceAfter": "$ 270.000",
-      "priceBefore": 155.999,
+      "priceBefore": 155999,
       "image": "https://resources.claroshop.com/medios-plazavip/fotos/productos_sears1/original/2992227.jpg",
       "color":"red"
     }
@@ -311,7 +311,7 @@
       "category":"electronica",
       "subCategory": "llantas",
       "priceAfter": "$ 260.000",
-      "priceBefore": 200.999,
+      "priceBefore": 200999,
       "image": "https://bmwrecambios.es/WebRoot/StorePiensa/Shops/eb9733/4EB2/9536/9A32/FA3E/31DD/AC10/1414/C890/36118036947_llanta_18_135m_bmw_e60_e61.JPG",
       "color":"black"
     },{
@@ -333,7 +333,7 @@
       "category":"coleccionables",
       "subCategory": "carros",
       "priceAfter": "$ 1.360.000",
-      "priceBefore": 990.999,
+      "priceBefore": 990999,
       "image": "https://http2.mlstatic.com/carro-bmw-z-4-coleccionable-a-escala-132-metalico-D_NQ_NP_672438-MCO26554980117_122017-F.jpg",
       "color":"black"
     },{
@@ -342,7 +342,7 @@
       "category":"coleccionables",
       "subCategory": "logo",
       "priceAfter": "$ 260.000",
-      "priceBefore": 210.999,
+      "priceBefore": 210999,
       "image": "https://images-na.ssl-images-amazon.com/images/I/51%2BWcAdjFIL._SR600,315_SCLZZZZZZZ_.jpg",
       "color":"white"
     },{
@@ -351,37 +351,37 @@
       "category":"coleccionables",
       "subCategory": "motos",
       "priceAfter": "$ 560.999",
-      "priceBefore": 490.999,
+      "priceBefore": 490999,
       "image": "https://ae01.alicdn.com/kf/Had8773d186384d229d43b29c99b653058/Modelo-de-coche-1-24-BMW-lado-de-la-motocicleta-tres-rounds-del-R-o-Yangtze.jpg_q50.jpg",
       "color":"black"
     }
 
 
     ,{
-      "id": 17,
+      "id": 19,
       "name": "Bicicleta roja",
       "category":"bisicleta",
       "subCategory": "bisicleta",
       "priceAfter": "$ 1.360.000",
-      "priceBefore": 950.999,
+      "priceBefore": 950999,
       "image": "https://tienda.benotto.com/images/Producto/60745/Bicicleta-Mongoose-Standoff-Roja-R24-21V-Hombre-ModR2488TG-BICMON2402.jpg",
       "color":"red"
     },{
-      "id": 18,
+      "id": 20,
       "name": "Bicicleta Amarilla",
       "category":"bisicleta",
       "subCategory": "bisicleta",
       "priceAfter": "$ 1.360.000",
-      "priceBefore": 960.999,
+      "priceBefore": 960999,
       "image": "https://cdn.shopify.com/s/files/1/0008/0143/9802/products/ELL6452_amarillo_1024x1024.jpg?v=1540116808",
       "color":"yellow"
     },{
-      "id": 19,
+      "id": 21,
       "name": "Bicicleta Azul",
       "category":"bisicleta",
       "subCategory": "bisicleta",
       "priceAfter": "$ 1.360.000",
-      "priceBefore": 970.999,
+      "priceBefore": 970999,
       "image": "https://thumbs.dreamstime.com/b/bicicleta-azul-met%C3%A1lica-aislada-en-el-fondo-blanco-de-la-monta%C3%B1a-143816395.jpg",
       "color":"blue"
     }

@@ -5,14 +5,18 @@ export const { product } = createActions({
     CREATE_PRODUCT: (product) => ({ product }),
     CREATE_PRODUCT_RESPONSE: () => ({}),
 
-    CREATE_DIAGNOSTICO: (product) => ({ product }),
-    CREATE_DIAGNOSTICO_RESPONSE: () => ({}),
 
-    GET_PRODUCT: () => ({}),
+    GET_PRODUCT: (id) => ({ id }),
     GET_PRODUCT_RESPONSE: (products) => ({ products }),
+
+    GET_PRODUCTS: (id) => ({ id }),
+    GET_PRODUCTS_RESPONSE: (listProducts) => ({ listProducts }),
     
-    GET_DIAGNOSTICO: () => ({}),
-    GET_DIAGNOSTICO_RESPONSE: (products) => ({ products }),
+    GET_PRICES: (id) => ({ id }),
+    GET_PRICES_RESPONSE: (products) => ({ products }),
+
+    GET_RANGE: (id) => ({ id }),
+    GET_RANGE_RESPONSE: (products) => ({ products }),
 
     GET: (id) => ({ id }),
     GET_RESPONSE: (products) => ({ products }),

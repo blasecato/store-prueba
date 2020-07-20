@@ -1,6 +1,6 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
 import { productcart as productcartActions } from "./ProductCarAction"
-import Api from '../../common/Api/Api'
+import Api from '../../common/api'
 import { push } from 'react-router-redux'
 
 function* sendProduct({ payload }) {
@@ -14,7 +14,7 @@ function* sendProduct({ payload }) {
     const err = new TypeError('ERROR_ADD_CAR')
     yield put(productcartActions.sendCarResponse(err))
   }
-}
+} 
 
 function* addCar({ payload }) {
   const { arrayPrpducts } = payload

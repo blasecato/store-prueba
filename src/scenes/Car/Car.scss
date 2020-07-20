@@ -1,0 +1,95 @@
+.Car{
+    display: flex;
+    justify-content: center;
+    &_container{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        &_head{
+            display: flex;
+            justify-content: space-between;
+        }
+        &--title{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 42px;
+            color: #000000;
+            margin-top: 15px;
+        }
+        .cart{
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+            margin: 17px 0;
+            border-bottom: 1px solid;
+            padding: 16px 0;
+            flex-wrap: wrap;
+            .car_numRef{
+                margin-left: 5px;
+            }
+            .img-car {
+                width: 180px;
+                height: auto;
+                object-fit: cover;
+            }
+            &_item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                .btn-r {
+                    background: red;
+                    color: #ffffff;
+                    font-size: 20px;
+                    height: 42px;
+                    width: 64px;
+                    font-weight: bold;
+                    border-radius: 0;
+                    border-color: #000000;
+                    margin-left: 10px;
+                    margin-top: 20px;
+                }
+                .price{
+                    font-size: 25px;
+                }
+                .priceA{
+                    text-decoration-line: line-through;
+                }
+            }
+            &_color{
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                margin-left: 5px;
+                box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+            }
+        }
+        .cont-btn{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            .btn{
+                width: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0;
+                font-weight: bold;
+                font-family: Roboto;
+                
+                &-finish{
+                    background: #1C69D4;
+                    color: #ffffff;
+                }
+                &-shopy{
+                    border: 1px solid;
+                    margin-right: 10px;
+                    color: #000000 !important;
+                }
+            }
+        }
+    }
+}
