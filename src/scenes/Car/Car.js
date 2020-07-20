@@ -72,7 +72,7 @@ export const Car = ({ history }) => {
                             <p className="car_name  AH">$ {item.product.priceBefore}</p>
                             <p className="car_ref">Total pedido</p>
                             <p className="car_name price">$ {item.total}</p>
-                            <Button className="btn-r" onClick={()=>handelDelete(index)}><DeleteOutlined /></Button>
+                            {/* <Button className="btn-r" onClick={()=>handelDelete(index)}><DeleteOutlined /></Button> */}
 
                         </div>
                     </div>
