@@ -7,6 +7,9 @@ export const { productcart } = createActions({
     SEND_CAR_RESPONSE: () => ({}),
     UPDATE_REDUCER: (reducer) => ({ reducer }),
     DELETE_BUILDS: (idProducts) => ({ idProducts }),
-    DELETE_BUILDS_RESPONSE: () => ({})
+    DELETE_BUILDS_RESPONSE: () => ({}),
+
+    GET_SHOPY: () => ({  }),
+    GET_SHOPY_RESPONSE: (shopys) => ({ shopys }),
   }
 })

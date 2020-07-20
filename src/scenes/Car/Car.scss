@@ -30,7 +30,7 @@
                 margin-left: 5px;
             }
             .img-car {
-                width: 180px;
+                width: 230px;
                 height: auto;
                 object-fit: cover;
             }
@@ -71,6 +71,7 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 40px;
+            height: auto;
             .btn{
                 width: 150px;
                 display: flex;
@@ -83,13 +84,31 @@
                 &-finish{
                     background: #1C69D4;
                     color: #ffffff;
+                    height: 50px;
                 }
                 &-shopy{
+                    margin-bottom: 19px;
+                    height: 50px;
                     border: 1px solid;
                     margin-right: 10px;
                     color: #000000 !important;
                 }
             }
+        }
+        .total{
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+          
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 19px;
+                color: #000000;
+                margin: 12px 0;
+                font-size: 30px;
+         
         }
     }
 }

@@ -15,7 +15,7 @@ function* createProduct({ payload }) {
 
 
 function* getPrices({ payload }) {
-  console.log(payload)
+  console.log("holaaaa",payload)
   if(payload.id.value){
     const response = yield Api.get(`/products?_sort=priceBefore&_order=${payload.id.value}&_page=${payload.id.pageCounter}&_limit=6`)
     if (response.ok) {
@@ -24,8 +24,8 @@ function* getPrices({ payload }) {
       const err = new TypeError('ERROR_GET_PRODUCTS')
       yield put(product.getPricesResponse(err))
     }
-  }else {
-    const response = yield Api.get(`/products?_page=${payload.id}&_limit=6`)
+  }else if(payload.id.pageCounter){
+    const response = yield Api.get(`/products?_page=${payload.id.pageCounter}&_limit=6`)
     if (response.ok) {
       yield put(product.getProductResponse(response.payload));
     } else {

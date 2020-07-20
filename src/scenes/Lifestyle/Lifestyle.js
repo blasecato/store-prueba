@@ -82,6 +82,8 @@ export const Lifestyle = () => {
 		</div>
 	);
 
+	
+
 
 	return (
 		<div className="Lifestyle">

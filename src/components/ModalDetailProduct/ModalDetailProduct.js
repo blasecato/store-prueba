@@ -18,10 +18,13 @@ export const ModalDetailProduct = ({ product }) => {
 	};
 
 	const onFinish = cant => {
-		var value = {cant , product}
-		let newArray = [...arrayPrpducts,value]
-		setVisible(false)
-		dispatch(productCartAction.addCar(newArray))
+		
+			var total = product.priceBefore * cant.cant;
+			var value = {cant , product, total}
+			let newArray = [...arrayPrpducts,value]
+			setVisible(false)
+			dispatch(productCartAction.addCar(newArray))
+		
 	};
 
 	const onFinishFailed = errorInfo => {

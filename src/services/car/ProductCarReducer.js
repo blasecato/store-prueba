@@ -3,7 +3,8 @@ import { handleActions } from 'redux-actions';
 export const INITIAL_STATE = {
   loading: false,
   serviceId: 1,
-  arrayPrpducts: []
+  arrayPrpducts: [],
+  shopys: []
 }
 
 const reducer = handleActions({
@@ -18,6 +19,21 @@ const reducer = handleActions({
         return { ...state, error, message, loading: false }
       }
     },
+
+
+
+    GET_SHOPY: (state, { payload: { } }) => ({ ...state, loading: true }),
+    GET_SHOPY_RESPONSE: {
+      next(state, { payload: { shopys } }) {
+        return { ...state, shopys }
+      },
+      throw(state, action) {
+        return { ...state }
+      }
+    },
+
+
+
     UPDATE_REDUCER: (state, { payload: { reducer } }) => ({ ...state, arrayPrpducts: reducer }),
     DELETE_BUILDS: (state, { payload: { } }) => ({ ...state }),
     DELETE_BUILDS_RESPONSE: {

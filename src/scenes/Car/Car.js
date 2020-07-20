@@ -5,12 +5,44 @@ import { Link } from "react-router-dom";
 import { DeleteOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from "react-redux"
 import { productcart as productCartAction } from "../../services/car/ProductCarAction";
+import { combineActions } from 'redux-actions';
 
 export const Car = ({ history }) => {
 
-    const { arrayPrpducts } = useSelector(state => state.car);
+    const { arrayPrpducts,shopys } = useSelector(state => state.car);
     const dispatch = useDispatch()
+    const [total , setTotal] = useState(0)
+    const [deleteProduct , setdDeleteProduct] = useState(false)
 
+    const contArray = arrayPrpducts && arrayPrpducts.length;
+
+    useEffect(() => {
+		var acum = 0
+        for (var i = 0; i < contArray; i++) {
+            acum = acum + arrayPrpducts[i].total
+        }
+        setTotal(acum)
+    }, [contArray])
+
+    useEffect(() => {
+		dispatch(productCartAction.getShopy())
+    }, [])
+    
+    console.log(deleteProduct)
+
+    const handleShopy = (arrayPrpducts) => {
+        let values = {arrayPrpducts,total}
+        console.log(values)
+        dispatch(productCartAction.sendCar(values))
+    }
+
+    const handelDelete = (index) => {
+        arrayPrpducts.splice(index)
+        console.log(arrayPrpducts)   
+        setdDeleteProduct(true)
+    }
+
+    console.log(shopys)
     return (
         <div className="Car">
             <div className="Car_container">
@@ -41,18 +73,25 @@ export const Car = ({ history }) => {
                             <p className="car_ref">Precio Antes</p>
                             <p className="car_name priceA">$ {item.product.priceAfter}</p>
                             <p className="car_ref">Precio Ahora</p>
-                            <p className="car_name price">$ {item.product.priceBefore}</p>
-                            <Button className="btn-r"><DeleteOutlined /></Button>
+                            <p className="car_name  AH">$ {item.product.priceBefore}</p>
+                            <p className="car_ref">Total pedido</p>
+                            <p className="car_name price">$ {item.total}</p>
+                            <Button className="btn-r" onClick={()=>handelDelete(index)}><DeleteOutlined /></Button>
 
                         </div>
                     </div>
                 )}
 
+                <div className="total">
+                    Total: ${total && total}
+                </div>
+
+
                 <div className="cont-btn">
                     <Link className="btn btn-shopy" to="/home">
                         Seguir Comprando
                     </Link>
-                    <Button className="btn btn-finish">
+                    <Button className="btn btn-finish" onClick={()=>handleShopy(arrayPrpducts)}>
                         Comprar
                     </Button>
                 </div>

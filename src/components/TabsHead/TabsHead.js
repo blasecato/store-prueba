@@ -7,9 +7,11 @@ import logo from "../../assets/image/logo.png";
 import { SearchOutlined, UserOutlined, ShoppingCartOutlined, MenuOutlined } from '@ant-design/icons';
 import { Lifestyle } from '../../scenes/Lifestyle/Lifestyle';
 import { productcart as productCartAction } from "../../services/car/ProductCarAction";
+import {Record} from "../Record/Record"
 
 import url from "../../assets/image/url.png";
 import check from "../../assets/image/check.png";
+import { handleAction } from 'redux-actions';
 
 const { SubMenu } = Menu;
 const { TabPane } = Tabs;
@@ -19,6 +21,7 @@ export const TabsHead = ({history}) => {
   const { arrayPrpducts } = useSelector(state => state.car);
   const dispatch = useDispatch()
   const cart = arrayPrpducts && arrayPrpducts.length;
+  const [pag , setPag] = useState(0)
 
   const content = (
     <div>
@@ -62,6 +65,10 @@ export const TabsHead = ({history}) => {
     </div>
   );
 
+  const handleAction =  (value) => {
+    setPag(value)
+  }
+  console.log(pag)
   return (
     <div className="TabsHead">
       <div className="menu">
@@ -69,22 +76,30 @@ export const TabsHead = ({history}) => {
           <SubMenu icon={<MenuOutlined />}>
             <Menu.ItemGroup>
               <Menu.Item key="setting:1">Accesorios</Menu.Item>
-              <Menu.Item key="setting:2">Lifestyle</Menu.Item>
-              <Menu.Item key="setting:3">Vehiculos usados</Menu.Item>
+              <Menu.Item key="setting:2">
+                <Link onClick={() => handleAction(3)}>Lifestyle</Link>
+              </Menu.Item>
+              <Menu.Item key="setting:3">
+                <Link onClick={() => handleAction(2)}>Historial</Link>
+              </Menu.Item>
               <Menu.Item key="setting:4">Novedades</Menu.Item>
+              <Menu.Item key="setting:5" className="btn-menu">
+                <Button className="menu"><UserOutlined/>Ingresar/Registrarse</Button>
+              </Menu.Item>
             </Menu.ItemGroup>
           </SubMenu>
+          
         </Menu>
       </div>
       <Tabs defaultActiveKey="2" >
         <TabPane tab="Accesorios para carros" key="1">
           Accesorios para carros
         </TabPane>
-        <TabPane tab="Lifestyle" key="2">
+        <TabPane tab="Lifestyle" key={pag > 0 ? pag == 2 && "2" : "2"}>
           <Lifestyle />
         </TabPane>
-        <TabPane tab="Ofertas" key="3">
-          Ofertas
+        <TabPane tab="Historial" key={pag > 0 ? pag == 3 && "3" : "3"}>
+          <Record />
         </TabPane>
         <TabPane tab="Novedades" key="4">
           Novedades
