@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.4.2",
     "connected-react-router": "^6.8.0",
-    "json-server": "^0.16.1",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -29,8 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "json-server --watch ./db/db.json --port 3001"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

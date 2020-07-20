@@ -3,7 +3,7 @@ import { Token } from './Storage/Token';
 import { store } from '../index'
 import { auth } from '../services/Auth/AuthActions';
 
-const apiUrl = 'http://localhost:3001'
+const apiUrl = 'https://bmwstoreshop.herokuapp.com'
 
 export class Api {
   post(url, data, formData) {
