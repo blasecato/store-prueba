@@ -12,7 +12,6 @@ export const Record = () => {
     useEffect(() => {
         dispatch(productCartAction.getShopy())
     }, [])
-    console.log(shopys)
 
     return (
 

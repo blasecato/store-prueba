@@ -15,7 +15,6 @@ function* createProduct({ payload }) {
 
 
 function* getPrices({ payload }) {
-  console.log("holaaaa",payload)
   if(payload.id.value){
     const response = yield Api.get(`/products?_sort=priceBefore&_order=${payload.id.value}&_page=${payload.id.pageCounter}&_limit=6`)
     if (response.ok) {
@@ -37,7 +36,6 @@ function* getPrices({ payload }) {
 
 
 function* getRange({ payload }) {
-  console.log(payload)
     const response = yield Api.get(`/products?priceBefore_gte=${payload.id.min}&priceBefore_lte=${payload.id.max}&_page=1&_limit=6`)
     if (response.ok) {
       yield put(product.getRangeResponse(response.payload));

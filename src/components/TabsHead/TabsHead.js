@@ -68,7 +68,6 @@ export const TabsHead = ({history}) => {
   const handleAction =  (value) => {
     setPag(value)
   }
-  console.log(pag)
   return (
     <div className="TabsHead">
       <div className="menu">

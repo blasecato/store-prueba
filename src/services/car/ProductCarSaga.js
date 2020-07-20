@@ -7,7 +7,6 @@ import { push } from 'react-router-redux'
 
 
 function* getShopy({ payload }) {
-  console.log(payload)
     const response = yield Api.get(`/cart`)
     if (response.ok) {
       yield put(productcartActions.getShopyResponse(response.payload));
@@ -21,7 +20,6 @@ function* getShopy({ payload }) {
 
 
 function* sendProduct({ payload }) {
-  console.log(payload)
   const { sendProduct } = payload
   const response = yield Api.post("/cart", sendProduct)
   if (response.ok) {

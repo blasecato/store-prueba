@@ -28,21 +28,17 @@ export const Car = ({ history }) => {
 		dispatch(productCartAction.getShopy())
     }, [])
     
-    console.log(deleteProduct)
 
     const handleShopy = (arrayPrpducts) => {
         let values = {arrayPrpducts,total}
-        console.log(values)
         dispatch(productCartAction.sendCar(values))
     }
 
     const handelDelete = (index) => {
         arrayPrpducts.splice(index)
-        console.log(arrayPrpducts)   
         setdDeleteProduct(true)
     }
 
-    console.log(shopys)
     return (
         <div className="Car">
             <div className="Car_container">
